@@ -1,0 +1,39 @@
+/* .header .header-2 .flex .user-box{
+   position: absolute;
+   top:120%; right:20px;
+   background-color: white;
+   border-radius: .50px;
+   box-shadow: 5px 10px rgba(0,0,0,.1);
+   border:.10px solid black;
+   padding:20px;
+   text-align: center;
+   width: 30rem;
+   display: none;
+   animation: fadeIn .2s linear;
+}
+
+.header .header-2 .flex .user-box.active{
+   display: inline-block;
+}
+
+.header .header-2 .flex .user-box p{
+   font-size: 25px;
+   color:#666;
+   margin-bottom: 25px;
+}
+
+.header .header-2 .flex .user-box p span{
+   color:#dc2222;
+}
+
+.header .header-2 .flex .user-box .delete-btn{
+   margin-top: 0;
+}
+
+.logo{
+  font-size: 2rem;
+  color:var(--black);
+}
+.logo span{
+  color:var(--blue);
+} */

@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css?family=Averia Gruesa Libre');
+@import url('https://fonts.googleapis.com/css?family=Oleo Script Swash Caps');
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+ }
+
+ html{
+   font-size: 62.5%;
+   overflow-x: hidden;
+}
+
+section{
+   padding:30px 20px;
+} 
+
+
+
+/* header start */
+.header{
+   padding:20px;
+   border-style: solid;
+   border-bottom-color: rgb(59, 62, 63);
+}
+
+/* .header.active{
+   background-color: var(--white);
+   box-shadow: var(--box-shadow);
+   border:0;
+} */
+
+.header .logo{
+   font-size: 2.5rem;
+   color:rgb(121, 212, 36);
+}
+
+/* .header .logo span{
+   color:rgb(255, 0, 0);
+} */
+
+.header .navbar{
+}
+
+.header .navbar a{
+   margin:0 1rem;
+   font-size: 2rem;
+   color: rgb(243, 62, 49);
+}
+
+.header .navbar a:hover{
+   color:#76b5d3;
+   text-decoration: underline;
+}
+
+/* header end */
+
+
+
+/* home start */
+.home{
+   background:url(../images/homenew.jpg) no-repeat;
+   background-size: cover;
+   background-position: center;
+}
+
+.home .content{
+   width: 55rem;
+   padding:8rem;
+}
+
+.home .content h3{
+   font-size: 6rem;
+   text-transform: uppercase;
+   color:var(--black);
+}
+
+.home .content p{
+   line-height: 2;
+   font-size: 20px;
+   color:var(--light-color);
+   padding:1rem 0;
+}
+
+.link-btn:hover{
+   background-color: rgb(185, 68, 201);
+   color:rgb(240, 240, 240);
+}
+
+/* home end */
+
+
+
+
+/* register start*/
+.form1{
+    height: 800px;
+    padding:20px;
+    background: url(../images/homenew.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+
+ .form1 form {
+   padding: 30px;
+   width: 500px;
+   border-radius: 30px;
+   box-shadow: 5px 10px rgba(19, 16, 16, 0.1);
+   border: 5px solid #0c0d24e0;
+   background-color: rgb(148, 134, 148);
+   text-align: center;
+   opacity: 0.85;
+}
+ 
+ .form1 form h3{
+    font-size: 40px;
+    margin-top: 0px;
+    text-transform:capitalize;
+    color:rgb(209, 26, 26);
+ }
+ 
+ .form1 form .box{
+    width: 100%;
+    border-radius: 10px;
+    background-color: #f5f5f5;;
+    padding:12px 14px;
+    font-size: 18px;
+    color:rgb(14, 12, 12);
+    border:1px solid black;
+    margin:10px 0;
+ }
+ 
+ .form1 form p{
+    padding-top: 20px;
+    font-size: 20px;
+    color:black;
+ }
+ 
+ .form1 form p a{
+    color:#da1c25;
+    font-weight: bold;
+ }
+ 
+ .form1 form p a:hover{
+    text-decoration: underline;
+ }
+ 
+ .home-btn,.link-btn{
+   display: inline-block;
+   margin-top: 15px;
+   padding:10px 20px;
+   cursor: pointer;
+   color:white;
+   font-size: 20px;
+   border-radius: 10px;
+   text-transform: capitalize;
+}
+
+.home-btn:hover{
+   background-color: rgb(28, 1, 150);
+   color:rgb(240, 240, 240);
+}
+.home-btn,.link-btn{
+   background-color: rgb(0, 129, 168);
+}
+
+.reset-btn{
+   margin-top: 5px;
+   padding:2px 5px;
+   color:rgb(236, 243, 242);
+   font-size: 15px;
+   border-radius: 5px;
+}
+.reset-btn:hover{
+   background-color: rgb(255, 0, 0);
+   color:rgb(255, 255, 255);
+}
+.reset-btn{
+   background-color: rgb(212, 97, 97);
+}
+
+/* register end*/
+
+
+
+
+/* login start*/
+
+.logi{
+   font-size: 20px;
+   text-align: right;
+   padding: 10px; 
+   background-color:#4b123a;
+}
+.logi .media{
+   text-align: left;
+}
+.logi a{
+  
+   padding: 5px;
+   border-radius: 5px;
+   border:5px solid #2d6bdf;
+   color: white;
+   width: 10px;
+   background-color: rgb(255, 0, 0);
+}
+
+/* login end*/
+/* footer start */
+.footer{
+   background-color: var(--light-bg);
+}
+
+
+/* footer end */
+
+/* media queries  */
+
+/* @media (max-width:991px){
+ 
+   html{
+      font-size: 55%;
+   }
+
+}
+
+@media (max-width:768px){
+
+   #menu-btn{
+      display: inline-block;
+   }
+
+   .header .container .navbar{
+      position: absolute;
+      top:99%; left:0; right:0;
+      background-color: var(--white);
+      border-top: var(--border);
+      border-bottom: var(--border);
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+   }
+
+   .header  .navbar.active{
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+   }
+
+   .header  .navbar a{
+      display: block;
+      font-size: 2.5rem;
+      margin:2rem;
+   }
+
+   .home .content h3{
+      font-size: 3.5rem;
+   }
+
+}
+
+@media (max-width:450px){
+
+   html{
+      font-size: 50%;
+   }
+
+   .heading h3{
+      font-size: 3.5rem;
+   }
+
+   .title{
+      font-size: 30rem;
+   }
+
+} */
+/* media queries  end*/
