@@ -54,11 +54,11 @@ if(!isset($admin_id)){
 
         <div class="box">
             <?php 
-                $select_admins = mysqli_query($conn, "SELECT * FROM `users` WHERE user_type = 'admin'") or die('query failed');
-                $number_of_admins = mysqli_num_rows($select_admins);
+                $select_doctor = mysqli_query($conn, "SELECT * FROM `doctor` ") or die('query failed');
+                $number_of_doctor = mysqli_num_rows($select_doctor);
             ?>
-            <h3><?php echo $number_of_admins; ?></h3>
-            <p>Admins</p>
+            <h3><?php echo $number_of_doctor; ?></h3>
+            <p>Doctors</p>
         </div>
 
 

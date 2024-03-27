@@ -27,7 +27,6 @@
          <i class="fas fa-envelope"></i>
          <h3>email</h3>
          <p>dentajins@gmail.com</p>
-         <p>dentpoos@gmail.com</p>
       </div>
 
       <div class="box">
@@ -44,7 +43,7 @@
 
    </div>
 
-   <div class="credit"> &copy; copyright @ <?php echo date('Y'); ?> by <span>mr. web designer</span>  </div>
+   <div class="credit"> &copy; copyright @ <?php echo date('Y'); ?> by <span>mr. Ajins designer</span>  </div>
 
 </section>
 

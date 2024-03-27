@@ -39,7 +39,7 @@ if(isset($message)){
                   </span>
                </div>
                <div class="i-box">
-               <a href="logout.php" class="delete-btn">logout</a>
+               <a href="../logout.php" class="delete-btn">logout</a>
             </div>
             <?php
             }

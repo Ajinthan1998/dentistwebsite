@@ -70,18 +70,16 @@ if(!isset($user_id)){
 
 if(isset($_POST['submit'])){
 
-   $patient_name = $_POST['name'];
-   $email = $_POST['email'];
-   $phone_no = $_POST['phone_no'];
-   $address = $_POST['address'];
-   $diseases = $_POST['diseases'];
-   $doct = $_POST['doctor'];
-   $date = $_POST['appoint_date'];
-
-  
- 
+   // Sanitize form inputs
+   $patient_name = mysqli_real_escape_string($conn, $_POST['name']);
+   $email = mysqli_real_escape_string($conn, $_POST['email']);
+   $phone_no = mysqli_real_escape_string($conn, $_POST['phone_no']);
+   $address = mysqli_real_escape_string($conn, $_POST['address']);
+   $diseases = mysqli_real_escape_string($conn, $_POST['diseases']);
+   $doct = mysqli_real_escape_string($conn, $_POST['doctor']);
+   $date = mysqli_real_escape_string($conn, $_POST['appoint_date']);
    
-      mysqli_query($conn, "INSERT INTO `appoint`(user_id, patient_name, email, phone_no, address, diseases, order_date, doct_name) VALUES('$user_id', '$patient_name', '$email', '$phone_no','$address','$diseases','$date','$doct')") or die('query failed');
+   mysqli_query($conn, "INSERT INTO `appoint`(user_id, patient_name, email, phone_no, address, diseases, order_date, doct_name) VALUES('$user_id', '$patient_name', '$email', '$phone_no','$address','$diseases','$date','$doct')") or die('query failed');
    header('location:appoint.php');
 }
 
@@ -98,16 +96,6 @@ if(isset($_POST['submit'])){
    window.location.href = 'appoint.php';
 }
 </script>
-
- 
  
 </body>
 </html>
-
-
-
-
-
-
-
-

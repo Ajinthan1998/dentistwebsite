@@ -54,7 +54,7 @@ if(isset($_GET['delete'])){
             <th>User id</th>
             <th>Username</th>
             <th>Email</th>
-            <th>User type</th>
+            <!-- <th>User type</th> -->
             <th>Manage User</th>
         </tr>
     
@@ -66,8 +66,7 @@ if(isset($_GET['delete'])){
             <td><?php echo $fetch_users['user_id']; ?></td>
             <td><?php echo $fetch_users['user_name']; ?></td>
             <td><?php echo $fetch_users['email']; ?></td>
-            <td><?php echo $fetch_users['user_type']; ?></td>
-            <td><a href="manage_users.php?delete=<?php echo $fetch_users['user_id']; ?>" onclick="return confirm('Confirm to delete this user?');" class="delete-btn">delete user</a></td>
+            <td><a href="manage_users.php?delete=<?php echo $fetch_users['user_id']; ?>" onclick="return confirm('Confirm to Remove this user?');" class="delete-btn">delete user</a></td>
         </tr>
       
       <?php
