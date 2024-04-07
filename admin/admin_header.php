@@ -14,6 +14,7 @@ if(isset($message)){
 
 <header class="header">
 <link rel="stylesheet" href="../css/style8.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
    <div class="container">
 
@@ -26,10 +27,7 @@ if(isset($message)){
             <a href="manage_users.php">Users</a>
          </nav>
 
-         <div class="icons">
-           
-            <!-- <div id="menu-btn" class="fas fa-bars"></div> -->
-            
+         <div class="icons">            
             <?php     
             if(isset( $_SESSION['admin_id'])){ 
                ?>
@@ -39,7 +37,7 @@ if(isset($message)){
                   </span>
                </div>
                <div class="i-box">
-               <a href="../logout.php" class="delete-btn">logout</a>
+               <a href="../logout.php" class="logout">logout</a>
             </div>
             <?php
             }

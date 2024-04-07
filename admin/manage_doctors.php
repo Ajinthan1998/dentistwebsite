@@ -52,64 +52,63 @@ if(isset($_POST['appoint'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>users</title>
-
-   <!-- font awesome cdn link  -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-   <!-- custom admin css file link  -->
+   <title>Manage Doctors</title>
    <link rel="stylesheet" href="../css/admin_style.css">
-
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script>
+      // jQuery script for confirmation before deletion
+      $(document).ready(function() {
+         $(".delete-btn").on("click", function(e) {
+            e.preventDefault();
+            if (confirm('Confirm to delete this doctor?')) {
+               window.location.href = $(this).attr('href');
+            }
+         });
+      });
+   </script>
 </head>
 <body>
    
 <?php include 'admin_header.php'; ?>
 
 <section class="users">
-
-   <h1 class="title"> Doctors Accounts </h1>
-
+   <h1 class="title">Doctors Accounts</h1>
    <div class="box-container">
-    <table class="center">
-        <tr>
-            <th>Doctor id</th>
-            <th>Doctor name</th>
-            <th>Phone number</th>
+      <table class="center">
+         <tr>
+            <th>Doctor Name</th>
+            <th>Phone Number</th>
             <th>Email</th>
             <th>Availability</th>
-            <th>Manage Doctos</th>
-        </tr>
-    
-      <?php
-         $select_doctor = mysqli_query($conn, "SELECT * FROM `doctor`") or die('query failed');
-         while($fetch_doctor = mysqli_fetch_assoc($select_doctor)){
-      ?>
-        <tr>
-         <form action="" method="POST">
-            <td><input type="text" name="update_doct_id" class="box" value="<?php echo $fetch_doctor['doct_id']; ?>" required></td>
-            <td><input type="text" name="update_name" class="box" value="<?php echo $fetch_doctor['doct_name']; ?>" required></td>
-            <td><input type="text" name="update_phone_no" class="box" value="<?php echo $fetch_doctor['phone_no']; ?>" required></td>
-            <td><input type="text" name="update_email" class="box" value="<?php echo $fetch_doctor['email']; ?>" required></td>
-            <td><input type="text" name="update_availability" class="box" value="<?php echo $fetch_doctor['availability']; ?>" required></td>
-
-            <td>
-            <input type="submit" value="Update"  name="update" class="option-btn">
-            <!-- <a href="manage_doctors.php?delete=<?php echo $fetch_doctor['doct_id']; ?>" onclick="return confirm('Confirm to delete this doctor?');" class="delete-btn">delete</a> -->
-         </form> 
-         </td>
-        </tr>
-      
-      <?php
-         }
-      ?>
-    </table>
+            <th>Action</th>
+         </tr>
+         <?php
+            $select_doctor = mysqli_query($conn, "SELECT * FROM `doctor`") or die('Query failed');
+            while($fetch_doctor = mysqli_fetch_assoc($select_doctor)){
+         ?>
+         <tr>
+            <form action="" method="POST">
+               <td><input type="text" name="update_name"  value="<?php echo $fetch_doctor['doct_name']; ?>" required></td>
+               <td><input type="text" name="update_phone_no" value="<?php echo $fetch_doctor['phone_no']; ?>" required></td>
+               <td><input type="text" name="update_email"  value="<?php echo $fetch_doctor['email']; ?>" required></td>
+               <td>
+                  <select name="update_availability" required>
+                     <option value="YES" <?php if ($fetch_doctor['availability'] == 'YES') echo 'selected'; ?>>YES</option>
+                     <option value="NO" <?php if ($fetch_doctor['availability'] == 'NO') echo 'selected'; ?>>NO</option>
+                  </select>
+               </td>
+               <td>
+                  <input type="hidden" name="update_doct_id" value="<?php echo $fetch_doctor['doct_id']; ?>">
+                  <button type="submit" name="update" class="option-btn">Update</button>
+               </td>
+            </form>
+         </tr>
+         <?php } ?>
+      </table>
    </div>
-
 </section>
 
-
-
-<!-- custom admin js file link  -->
+<!-- custom admin js file link -->
 <script src="../js/admin_script.js"></script>
 
 </body>

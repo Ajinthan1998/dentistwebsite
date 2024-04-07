@@ -39,7 +39,7 @@ if(isset($_GET['delete'])){
    
 <?php include 'admin_header.php'; ?>
 
-<section class="add-foods">
+<section class="add-form">
    <a href="manage_doctors.php" div="btn" >Manage Doctors</a>
 </section>
 
@@ -54,12 +54,11 @@ if(isset($_GET['delete'])){
             <th>User id</th>
             <th>Username</th>
             <th>Email</th>
-            <!-- <th>User type</th> -->
             <th>Manage User</th>
         </tr>
     
       <?php
-         $select_users = mysqli_query($conn, "SELECT * FROM `users`") or die('query failed');
+         $select_users = mysqli_query($conn, "SELECT * FROM `users` WHERE user_type = 'user'") or die('query failed');
          while($fetch_users = mysqli_fetch_assoc($select_users)){
       ?>
         <tr>

@@ -38,12 +38,12 @@ if(!isset($admin_id)){
 
    <h1 class="title">dashboard</h1>
 
-   <div class="box2">
+   <!-- <div class="box2">
          
-      </div>
+      </div> -->
 
    <div class="box-container">
-        <div class="box">
+        <div>
             <?php 
                 $select_users = mysqli_query($conn, "SELECT * FROM `users` WHERE user_type = 'user'") or die('query failed');
                 $number_of_users = mysqli_num_rows($select_users);
@@ -52,7 +52,7 @@ if(!isset($admin_id)){
             <p>Normal users</p>
         </div>
 
-        <div class="box">
+        <div>
             <?php 
                 $select_doctor = mysqli_query($conn, "SELECT * FROM `doctor` ") or die('query failed');
                 $number_of_doctor = mysqli_num_rows($select_doctor);
@@ -62,7 +62,7 @@ if(!isset($admin_id)){
         </div>
 
 
-      <div class="box">
+      <div>
          <?php 
             $select_orders = mysqli_query($conn, "SELECT * FROM `appoint`") or die('query failed');
             $number_of_orders = mysqli_num_rows($select_orders);

@@ -11,7 +11,6 @@ if(isset($_POST['submit'])){
    $select_users = mysqli_query($conn, "SELECT * FROM `users` WHERE email = '$email' AND password = '$pass'") or die('query failed');
    $select_doctor = mysqli_query($conn, "SELECT * FROM `doctor` WHERE email = '$email' AND password = '$pass'") or die('query failed');
 
-
    if(mysqli_num_rows($select_users) > 0){
 
       $row = mysqli_fetch_assoc($select_users);
@@ -35,13 +34,14 @@ if(isset($_POST['submit'])){
    
          
    }
+
    elseif(mysqli_num_rows($select_doctor) > 0){
       $row = mysqli_fetch_assoc($select_doctor);
    
-         $_SESSION['doctor_name'] = $row['doct_name'];
-         $_SESSION['doctor_email'] = $row['email'];
-         $_SESSION['doctor_id'] = $row['doct_id'];
-         header('location:home.php');
+         $_SESSION['doct_name'] = $row['doct_name'];
+         $_SESSION['doct_email'] = $row['email'];
+         $_SESSION['doct_id'] = $row['doct_id'];
+         header('location:doct.php');
 
    }
    else{

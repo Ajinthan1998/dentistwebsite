@@ -72,7 +72,6 @@ if(isset($message)){
       <input type="password" name="cpassword" placeholder="confirm your password" required class="box">
       <select name="user_type" class="box">
          <option value="user">user</option>
-         <option value="admin">doctor</option>
       </select>
       <input type="submit" name="submit" value="register now" class="home-btn">
       <br><br>
